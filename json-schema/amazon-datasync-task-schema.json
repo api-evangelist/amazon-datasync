@@ -1,0 +1,129 @@
+{
+  "$id": "https://schema.api.io/amazon-datasync/amazon-datasync-task-schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Amazon DataSync Task",
+  "description": "Schema representing an AWS DataSync task resource. A task defines the source location, destination location, and the options to use for transferring data.",
+  "type": "object",
+  "required": [
+    "TaskArn",
+    "SourceLocationArn",
+    "DestinationLocationArn"
+  ],
+  "properties": {
+    "TaskArn": {
+      "type": "string",
+      "description": "The Amazon Resource Name (ARN) of the task.",
+      "pattern": "^arn:aws:datasync:[a-z0-9-]+:[0-9]{12}:task/task-[a-f0-9]{17}$"
+    },
+    "Name": {
+      "type": "string",
+      "description": "The name of the task.",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "Status": {
+      "type": "string",
+      "description": "The status of the task.",
+      "enum": ["AVAILABLE", "CREATING", "QUEUED", "RUNNING", "UNAVAILABLE"]
+    },
+    "SourceLocationArn": {
+      "type": "string",
+      "description": "The ARN of the source location for the task."
+    },
+    "DestinationLocationArn": {
+      "type": "string",
+      "description": "The ARN of the destination location for the task."
+    },
+    "CurrentTaskExecutionArn": {
+      "type": "string",
+      "description": "The ARN of the most recent task execution."
+    },
+    "Options": {
+      "$ref": "#/$defs/Options"
+    },
+    "Schedule": {
+      "$ref": "#/$defs/TaskSchedule"
+    },
+    "ErrorCode": {
+      "type": "string",
+      "description": "Errors that DataSync encountered during execution of the task."
+    },
+    "ErrorDetail": {
+      "type": "string",
+      "description": "Detailed description of an error that was encountered during the task execution."
+    },
+    "CreationTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The time that the task was created."
+    },
+    "Tags": {
+      "type": "array",
+      "description": "The tags associated with the task.",
+      "items": {
+        "$ref": "#/$defs/Tag"
+      }
+    }
+  },
+  "$defs": {
+    "Options": {
+      "type": "object",
+      "description": "Represents the options that are available to control the behavior of a StartTaskExecution operation.",
+      "properties": {
+        "VerifyMode": {
+          "type": "string",
+          "enum": ["POINT_IN_TIME_CONSISTENT", "ONLY_FILES_TRANSFERRED", "NONE"]
+        },
+        "OverwriteMode": {
+          "type": "string",
+          "enum": ["ALWAYS", "NEVER"]
+        },
+        "Atime": {
+          "type": "string",
+          "enum": ["NONE", "BEST_EFFORT"]
+        },
+        "Mtime": {
+          "type": "string",
+          "enum": ["NONE", "PRESERVE"]
+        },
+        "PreserveDeletedFiles": {
+          "type": "string",
+          "enum": ["PRESERVE", "REMOVE"]
+        },
+        "TransferMode": {
+          "type": "string",
+          "enum": ["CHANGED", "ALL"]
+        },
+        "LogLevel": {
+          "type": "string",
+          "enum": ["OFF", "BASIC", "TRANSFER"]
+        }
+      }
+    },
+    "TaskSchedule": {
+      "type": "object",
+      "required": ["ScheduleExpression"],
+      "properties": {
+        "ScheduleExpression": {
+          "type": "string",
+          "description": "A cron expression that specifies when DataSync initiates a scheduled transfer."
+        }
+      }
+    },
+    "Tag": {
+      "type": "object",
+      "required": ["Key"],
+      "properties": {
+        "Key": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "Value": {
+          "type": "string",
+          "maxLength": 256
+        }
+      }
+    }
+  }
+}

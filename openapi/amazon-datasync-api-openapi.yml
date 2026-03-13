@@ -1,0 +1,300 @@
+openapi: 3.1.0
+info:
+  title: Amazon DataSync REST API
+  description: >-
+    AWS DataSync is an online data transfer service that simplifies, automates,
+    and accelerates moving data between on-premises storage systems and AWS
+    storage services. This API enables management of transfer tasks, source and
+    destination locations, agents, and task executions.
+  version: '2018-11-09'
+  contact:
+    name: AWS Support
+    url: https://aws.amazon.com/premiumsupport/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://aws.amazon.com/service-terms/
+  x-logo:
+    url: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+externalDocs:
+  description: Amazon DataSync API Reference
+  url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
+servers:
+  - url: https://datasync.{region}.amazonaws.com
+    description: Amazon DataSync regional endpoint
+    variables:
+      region:
+        default: us-east-1
+        description: AWS region
+        enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - eu-west-1
+          - eu-west-2
+          - eu-central-1
+          - ap-northeast-1
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-south-1
+          - sa-east-1
+security:
+  - sigv4: []
+paths:
+  /:
+    post:
+      summary: Create Task
+      description: Configures a task, which defines where and how DataSync transfers your data.
+      operationId: createTask
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              $ref: '#/components/schemas/CreateTaskRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+      x-amz-target: FmrsService.CreateTask
+  /#ListTasks:
+    post:
+      summary: List Tasks
+      description: Returns a list of the DataSync tasks you created.
+      operationId: listTasks
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              $ref: '#/components/schemas/ListTasksRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListTasksResponse'
+      x-amz-target: FmrsService.ListTasks
+  /#DescribeTask:
+    post:
+      summary: Describe Task
+      description: Provides information about a DataSync transfer task.
+      operationId: describeTask
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              $ref: '#/components/schemas/DescribeTaskRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeTaskResponse'
+      x-amz-target: FmrsService.DescribeTask
+  /#StartTaskExecution:
+    post:
+      summary: Start Task Execution
+      description: Starts an existing DataSync task. By starting a task, you tell DataSync to immediately begin transferring data.
+      operationId: startTaskExecution
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              $ref: '#/components/schemas/StartTaskExecutionRequest'
+      responses:
+        '200':
+          description: Successful response
+      x-amz-target: FmrsService.StartTaskExecution
+  /#CreateLocationS3:
+    post:
+      summary: Create Location S3
+      description: Creates a transfer location for an Amazon S3 bucket.
+      operationId: createLocationS3
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              $ref: '#/components/schemas/CreateLocationS3Request'
+      responses:
+        '200':
+          description: Successful response
+      x-amz-target: FmrsService.CreateLocationS3
+  /#CreateAgent:
+    post:
+      summary: Create Agent
+      description: Activates an AWS DataSync agent that you've deployed in your storage environment.
+      operationId: createAgent
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              $ref: '#/components/schemas/CreateAgentRequest'
+      responses:
+        '200':
+          description: Successful response
+      x-amz-target: FmrsService.CreateAgent
+components:
+  securitySchemes:
+    sigv4:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: AWS Signature Version 4
+  schemas:
+    CreateTaskRequest:
+      type: object
+      required:
+        - SourceLocationArn
+        - DestinationLocationArn
+      properties:
+        SourceLocationArn:
+          type: string
+        DestinationLocationArn:
+          type: string
+        Name:
+          type: string
+        Options:
+          $ref: '#/components/schemas/Options'
+        Schedule:
+          $ref: '#/components/schemas/TaskSchedule'
+        Tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagListEntry'
+    CreateTaskResponse:
+      type: object
+      properties:
+        TaskArn:
+          type: string
+    ListTasksRequest:
+      type: object
+      properties:
+        MaxResults:
+          type: integer
+        NextToken:
+          type: string
+    ListTasksResponse:
+      type: object
+      properties:
+        Tasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaskListEntry'
+        NextToken:
+          type: string
+    DescribeTaskRequest:
+      type: object
+      required:
+        - TaskArn
+      properties:
+        TaskArn:
+          type: string
+    DescribeTaskResponse:
+      type: object
+      properties:
+        TaskArn:
+          type: string
+        Status:
+          type: string
+        Name:
+          type: string
+        SourceLocationArn:
+          type: string
+        DestinationLocationArn:
+          type: string
+        Options:
+          $ref: '#/components/schemas/Options'
+    StartTaskExecutionRequest:
+      type: object
+      required:
+        - TaskArn
+      properties:
+        TaskArn:
+          type: string
+    CreateLocationS3Request:
+      type: object
+      required:
+        - S3BucketArn
+        - S3Config
+      properties:
+        S3BucketArn:
+          type: string
+        S3Config:
+          type: object
+          properties:
+            BucketAccessRoleArn:
+              type: string
+        Subdirectory:
+          type: string
+    CreateAgentRequest:
+      type: object
+      required:
+        - ActivationKey
+      properties:
+        ActivationKey:
+          type: string
+        AgentName:
+          type: string
+        Tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagListEntry'
+    Options:
+      type: object
+      properties:
+        VerifyMode:
+          type: string
+          enum: [POINT_IN_TIME_CONSISTENT, ONLY_FILES_TRANSFERRED, NONE]
+        OverwriteMode:
+          type: string
+          enum: [ALWAYS, NEVER]
+        Atime:
+          type: string
+          enum: [NONE, BEST_EFFORT]
+        Mtime:
+          type: string
+          enum: [NONE, PRESERVE]
+        PreserveDeletedFiles:
+          type: string
+          enum: [PRESERVE, REMOVE]
+        TransferMode:
+          type: string
+          enum: [CHANGED, ALL]
+        LogLevel:
+          type: string
+          enum: [OFF, BASIC, TRANSFER]
+    TaskSchedule:
+      type: object
+      required:
+        - ScheduleExpression
+      properties:
+        ScheduleExpression:
+          type: string
+    TaskListEntry:
+      type: object
+      properties:
+        TaskArn:
+          type: string
+        Status:
+          type: string
+        Name:
+          type: string
+    TagListEntry:
+      type: object
+      required:
+        - Key
+      properties:
+        Key:
+          type: string
+        Value:
+          type: string

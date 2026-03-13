@@ -1,0 +1,78 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "https://schema.org/",
+    "datasync": "https://docs.aws.amazon.com/datasync/latest/userguide/",
+    "aws": "https://aws.amazon.com/",
+    "iam": "https://docs.aws.amazon.com/IAM/latest/UserGuide/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "schema": "https://schema.org/",
+
+    "Task": {
+      "@id": "datasync:API_DescribeTask.html",
+      "@context": {
+        "TaskArn": {
+          "@id": "aws:arn",
+          "@type": "@id"
+        },
+        "Name": {
+          "@id": "schema:name",
+          "@type": "xsd:string"
+        },
+        "Status": {
+          "@id": "datasync:TaskStatus",
+          "@type": "xsd:string"
+        },
+        "SourceLocationArn": {
+          "@id": "datasync:SourceLocation",
+          "@type": "@id"
+        },
+        "DestinationLocationArn": {
+          "@id": "datasync:DestinationLocation",
+          "@type": "@id"
+        },
+        "CreationTime": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Location": {
+      "@id": "datasync:API_DescribeLocationS3.html",
+      "@context": {
+        "LocationArn": {
+          "@id": "aws:arn",
+          "@type": "@id"
+        },
+        "LocationUri": {
+          "@id": "schema:url",
+          "@type": "@id"
+        },
+        "CreationTime": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Agent": {
+      "@id": "datasync:API_DescribeAgent.html",
+      "@context": {
+        "AgentArn": {
+          "@id": "aws:arn",
+          "@type": "@id"
+        },
+        "Name": {
+          "@id": "schema:name",
+          "@type": "xsd:string"
+        },
+        "Status": {
+          "@id": "datasync:AgentStatus",
+          "@type": "xsd:string"
+        }
+      }
+    }
+  }
+}
