@@ -79,6 +79,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ListTasksResponse'
       x-amz-target: FmrsService.ListTasks
+      tags:
+        - '#ListTasks'
   /#DescribeTask:
     post:
       summary: Amazon DataSync Describe Task
@@ -98,6 +100,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/DescribeTaskResponse'
       x-amz-target: FmrsService.DescribeTask
+      tags:
+        - '#DescribeTask'
   /#StartTaskExecution:
     post:
       summary: Amazon DataSync Start Task Execution
@@ -113,6 +117,8 @@ paths:
         '200':
           description: Successful response
       x-amz-target: FmrsService.StartTaskExecution
+      tags:
+        - '#StartTaskExecution'
   /#CreateLocationS3:
     post:
       summary: Amazon DataSync Create Location S3
@@ -128,6 +134,8 @@ paths:
         '200':
           description: Successful response
       x-amz-target: FmrsService.CreateLocationS3
+      tags:
+        - '#CreateLocationS3'
   /#CreateAgent:
     post:
       summary: Amazon DataSync Create Agent
@@ -143,6 +151,8 @@ paths:
         '200':
           description: Successful response
       x-amz-target: FmrsService.CreateAgent
+      tags:
+        - '#CreateAgent'
 components:
   securitySchemes:
     sigv4:
@@ -298,3 +308,9 @@ components:
           type: string
         Value:
           type: string
+tags:
+  - name: '#CreateAgent'
+  - name: '#CreateLocationS3'
+  - name: '#DescribeTask'
+  - name: '#ListTasks'
+  - name: '#StartTaskExecution'
