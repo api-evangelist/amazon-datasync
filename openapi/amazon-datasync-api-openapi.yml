@@ -44,7 +44,7 @@ security:
 paths:
   /:
     post:
-      summary: Create Task
+      summary: Amazon DataSync Create Task
       description: Configures a task, which defines where and how DataSync transfers your data.
       operationId: createTask
       requestBody:
@@ -63,7 +63,7 @@ paths:
       x-amz-target: FmrsService.CreateTask
   /#ListTasks:
     post:
-      summary: List Tasks
+      summary: Amazon DataSync List Tasks
       description: Returns a list of the DataSync tasks you created.
       operationId: listTasks
       requestBody:
@@ -81,7 +81,7 @@ paths:
       x-amz-target: FmrsService.ListTasks
   /#DescribeTask:
     post:
-      summary: Describe Task
+      summary: Amazon DataSync Describe Task
       description: Provides information about a DataSync transfer task.
       operationId: describeTask
       requestBody:
@@ -100,7 +100,7 @@ paths:
       x-amz-target: FmrsService.DescribeTask
   /#StartTaskExecution:
     post:
-      summary: Start Task Execution
+      summary: Amazon DataSync Start Task Execution
       description: Starts an existing DataSync task. By starting a task, you tell DataSync to immediately begin transferring data.
       operationId: startTaskExecution
       requestBody:
@@ -115,7 +115,7 @@ paths:
       x-amz-target: FmrsService.StartTaskExecution
   /#CreateLocationS3:
     post:
-      summary: Create Location S3
+      summary: Amazon DataSync Create Location S3
       description: Creates a transfer location for an Amazon S3 bucket.
       operationId: createLocationS3
       requestBody:
@@ -130,7 +130,7 @@ paths:
       x-amz-target: FmrsService.CreateLocationS3
   /#CreateAgent:
     post:
-      summary: Create Agent
+      summary: Amazon DataSync Create Agent
       description: Activates an AWS DataSync agent that you've deployed in your storage environment.
       operationId: createAgent
       requestBody:
