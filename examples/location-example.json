@@ -1,0 +1,5 @@
+{
+  "LocationArn": "arn:aws:datasync:us-east-1:123456789012:location/loc-01234EXAMPLE",
+  "LocationUri": "s3://my-datasync-bucket/data/",
+  "CreationTime": "2024-01-15T10:00:00Z"
+}

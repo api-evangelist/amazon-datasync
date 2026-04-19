@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/amazon-datasync/json-schema/create-location-s3-request-schema.json",
+  "title": "Create Location S3 Request",
+  "description": "Request body for creating an Amazon S3 location.",
+  "type": "object",
+  "required": [
+    "S3BucketArn",
+    "S3Config"
+  ],
+  "properties": {
+    "S3BucketArn": {
+      "type": "string",
+      "description": "The ARN of the S3 bucket. This ARN uniquely identifies the bucket."
+    },
+    "S3StorageClass": {
+      "type": "string"
+    },
+    "Subdirectory": {
+      "type": "string"
+    },
+    "S3Config": {
+      "type": "object"
+    }
+  }
+}

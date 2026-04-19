@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://api-evangelist.github.io/amazon-datasync/json-structure/create-task-response-structure.json",
+  "title": "Create Task Response",
+  "description": "Response after creating a DataSync task.",
+  "type": "typedMap",
+  "fields": {
+    "TaskArn": {
+      "type": "str",
+      "description": "The ARN of the newly created task"
+    }
+  }
+}

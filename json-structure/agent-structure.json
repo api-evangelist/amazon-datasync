@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://api-evangelist.github.io/amazon-datasync/json-structure/agent-structure.json",
+  "title": "Agent",
+  "description": "A DataSync agent deployed on-premises or in a VPC for data transfer.",
+  "type": "typedMap",
+  "fields": {
+    "AgentArn": {
+      "type": "str",
+      "description": "The ARN of the DataSync agent. This ARN uniquely identifies the agent."
+    },
+    "Name": {
+      "type": "str",
+      "description": "Name"
+    },
+    "Status": {
+      "type": "str",
+      "description": "Status"
+    },
+    "CreationTime": {
+      "type": "str",
+      "description": "CreationTime"
+    }
+  }
+}

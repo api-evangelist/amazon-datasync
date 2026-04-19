@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/amazon-datasync/json-schema/options-schema.json",
+  "title": "Options",
+  "description": "Configuration options for a DataSync task defining transfer behavior.",
+  "type": "object",
+  "properties": {
+    "VerifyMode": {
+      "type": "string",
+      "enum": [
+        "POINT_IN_TIME_CONSISTENT",
+        "ONLY_FILES_TRANSFERRED",
+        "NONE"
+      ]
+    },
+    "OverwriteMode": {
+      "type": "string",
+      "enum": [
+        "ALWAYS",
+        "NEVER"
+      ]
+    },
+    "Atime": {
+      "type": "string",
+      "enum": [
+        "NONE",
+        "BEST_EFFORT"
+      ]
+    },
+    "Mtime": {
+      "type": "string",
+      "enum": [
+        "NONE",
+        "PRESERVE"
+      ]
+    },
+    "PreserveDeletedFiles": {
+      "type": "string",
+      "enum": [
+        "PRESERVE",
+        "REMOVE"
+      ]
+    }
+  }
+}

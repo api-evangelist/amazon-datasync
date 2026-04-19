@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://api-evangelist.github.io/amazon-datasync/json-structure/task-execution-structure.json",
+  "title": "Task Execution",
+  "description": "A specific execution run of a DataSync task.",
+  "type": "typedMap",
+  "fields": {
+    "TaskExecutionArn": {
+      "type": "str",
+      "description": "The ARN of the task execution. This ARN uniquely identifies the execution."
+    },
+    "Status": {
+      "type": "str",
+      "description": "Status"
+    },
+    "StartTime": {
+      "type": "str",
+      "description": "StartTime"
+    },
+    "EstimatedFilesToTransfer": {
+      "type": "int",
+      "description": "EstimatedFilesToTransfer"
+    },
+    "FilesTransferred": {
+      "type": "int",
+      "description": "FilesTransferred"
+    },
+    "BytesTransferred": {
+      "type": "int",
+      "description": "BytesTransferred"
+    }
+  }
+}

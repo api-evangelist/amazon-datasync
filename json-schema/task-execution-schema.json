@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/amazon-datasync/json-schema/task-execution-schema.json",
+  "title": "Task Execution",
+  "description": "A specific execution run of a DataSync task.",
+  "type": "object",
+  "properties": {
+    "TaskExecutionArn": {
+      "type": "string",
+      "description": "The ARN of the task execution. This ARN uniquely identifies the execution."
+    },
+    "Status": {
+      "type": "string",
+      "enum": [
+        "QUEUED",
+        "LAUNCHING",
+        "PREPARING",
+        "TRANSFERRING",
+        "VERIFYING",
+        "SUCCESS",
+        "ERROR"
+      ]
+    },
+    "StartTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "EstimatedFilesToTransfer": {
+      "type": "integer"
+    },
+    "FilesTransferred": {
+      "type": "integer"
+    },
+    "BytesTransferred": {
+      "type": "integer"
+    }
+  }
+}

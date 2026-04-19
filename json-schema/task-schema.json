@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/amazon-datasync/json-schema/task-schema.json",
+  "title": "Task",
+  "description": "A DataSync task defining source location, destination location, and transfer configuration.",
+  "type": "object",
+  "properties": {
+    "TaskArn": {
+      "type": "string",
+      "description": "The ARN of the DataSync task. This ARN uniquely identifies the task."
+    },
+    "Name": {
+      "type": "string",
+      "description": "The name of the task"
+    },
+    "Status": {
+      "type": "string",
+      "enum": [
+        "AVAILABLE",
+        "CREATING",
+        "QUEUED",
+        "RUNNING",
+        "UNAVAILABLE"
+      ]
+    },
+    "SourceLocationArn": {
+      "type": "string",
+      "description": "The ARN of the source location. This ARN uniquely identifies the location."
+    },
+    "DestinationLocationArn": {
+      "type": "string",
+      "description": "The ARN of the destination location. This ARN uniquely identifies the location."
+    },
+    "CurrentTaskExecutionArn": {
+      "type": "string"
+    },
+    "CloudWatchLogGroupArn": {
+      "type": "string"
+    }
+  }
+}

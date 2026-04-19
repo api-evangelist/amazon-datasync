@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/amazon-datasync/json-schema/task-list-entry-schema.json",
+  "title": "Task List Entry",
+  "description": "A summary of a DataSync task.",
+  "type": "object",
+  "properties": {
+    "TaskArn": {
+      "type": "string"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Status": {
+      "type": "string"
+    }
+  }
+}

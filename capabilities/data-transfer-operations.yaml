@@ -1,0 +1,93 @@
+id: https://api-evangelist.github.io/amazon-datasync/capabilities/data-transfer-operations.yaml
+name: Data Transfer Operations
+description: Workflow-oriented Naftiko capability for automated data transfer operations using Amazon DataSync, covering on-premises to cloud migration, cross-cloud transfer, and ongoing synchronization workflows.
+version: 1.0.0-alpha1
+specificationVersion: 1.0.0-alpha1
+
+tags:
+  - Data Transfer
+  - Migration
+  - Storage
+  - Automation
+  - Hybrid Cloud
+
+imports:
+  - url: capabilities/shared/datasync.yaml
+    as: datasync
+
+personas:
+  - name: Storage Administrator
+    description: Administrator responsible for managing data movement between on-premises and cloud storage
+  - name: Cloud Migration Engineer
+    description: Engineer executing data migrations from on-premises systems to AWS cloud storage
+  - name: Data Platform Engineer
+    description: Engineer maintaining ongoing data synchronization between storage systems
+
+workflows:
+  - name: Migrate Data to S3
+    description: Transfer data from an on-premises NFS/SMB share to Amazon S3
+    steps:
+      - step: createAgent
+        capability: datasync
+        description: Activate a DataSync agent on the on-premises network
+      - step: createLocationNfs
+        capability: datasync
+        description: Create the source NFS location pointing to on-premises data
+      - step: createLocationS3
+        capability: datasync
+        description: Create the destination S3 location
+      - step: createTask
+        capability: datasync
+        description: Create a transfer task linking source and destination
+      - step: startTaskExecution
+        capability: datasync
+        description: Start the data transfer
+      - step: describeTaskExecution
+        capability: datasync
+        description: Monitor transfer progress until completion
+    persona: Cloud Migration Engineer
+
+  - name: Monitor Ongoing Synchronization
+    description: Monitor and manage scheduled data synchronization runs
+    steps:
+      - step: listTaskExecutions
+        capability: datasync
+        description: List recent task execution runs
+      - step: describeTaskExecution
+        capability: datasync
+        description: Check status and metrics for each execution
+    persona: Storage Administrator
+
+  - name: Set Up Recurring Transfer
+    description: Configure a task with a schedule for ongoing recurring data transfers
+    steps:
+      - step: createTask
+        capability: datasync
+        description: Create task with schedule configuration
+      - step: listTasks
+        capability: datasync
+        description: Verify task is scheduled and active
+    persona: Data Platform Engineer
+
+rest:
+  port: 8080
+  baseURL: https://datasync.amazonaws.com
+  auth:
+    type: aws-signature-v4
+    service: datasync
+
+mcp:
+  port: 9090
+  tools:
+    - name: migrate_data_to_s3
+      description: Full workflow to transfer data from on-premises storage to Amazon S3
+      workflow: Migrate Data to S3
+    - name: monitor_synchronization
+      description: Monitor the status of ongoing data synchronization runs
+      workflow: Monitor Ongoing Synchronization
+    - name: setup_recurring_transfer
+      description: Configure a scheduled recurring data transfer task
+      workflow: Set Up Recurring Transfer
+    - name: list_tasks
+      description: List all configured DataSync tasks
+      operationId: listTasks

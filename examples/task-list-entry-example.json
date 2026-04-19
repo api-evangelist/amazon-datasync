@@ -1,0 +1,5 @@
+{
+  "TaskArn": "arn:aws:datasync:us-east-1:123456789012:task/task-01234567890EXAMPLE",
+  "Name": "MyDataSyncTask",
+  "Status": "AVAILABLE"
+}

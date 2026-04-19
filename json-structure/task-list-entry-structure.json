@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://api-evangelist.github.io/amazon-datasync/json-structure/task-list-entry-structure.json",
+  "title": "Task List Entry",
+  "description": "A summary of a DataSync task.",
+  "type": "typedMap",
+  "fields": {
+    "TaskArn": {
+      "type": "str",
+      "description": "TaskArn"
+    },
+    "Name": {
+      "type": "str",
+      "description": "Name"
+    },
+    "Status": {
+      "type": "str",
+      "description": "Status"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "AgentArn": "arn:aws:datasync:us-east-1:123456789012:agent/agent-01234EXAMPLE",
+  "Name": "MyOnPremAgent",
+  "Status": "ONLINE",
+  "CreationTime": "2024-01-10T08:00:00Z"
+}

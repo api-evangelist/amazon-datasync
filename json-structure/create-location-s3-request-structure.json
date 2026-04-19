@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://api-evangelist.github.io/amazon-datasync/json-structure/create-location-s3-request-structure.json",
+  "title": "Create Location S3 Request",
+  "description": "Request body for creating an Amazon S3 location.",
+  "type": "typedMap",
+  "fields": {
+    "S3BucketArn": {
+      "type": "str",
+      "description": "The ARN of the S3 bucket. This ARN uniquely identifies the bucket."
+    },
+    "S3StorageClass": {
+      "type": "str",
+      "description": "S3StorageClass"
+    },
+    "Subdirectory": {
+      "type": "str",
+      "description": "Subdirectory"
+    },
+    "S3Config": {
+      "type": "map",
+      "description": "S3Config"
+    }
+  }
+}

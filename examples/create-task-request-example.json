@@ -1,0 +1,5 @@
+{
+  "SourceLocationArn": "arn:aws:datasync:us-east-1:123456789012:location/loc-01234EXAMPLE",
+  "DestinationLocationArn": "arn:aws:datasync:us-east-1:123456789012:location/loc-89012EXAMPLE",
+  "Name": "MyDataSyncTask"
+}

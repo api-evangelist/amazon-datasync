@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/amazon-datasync/json-schema/create-task-request-schema.json",
+  "title": "Create Task Request",
+  "description": "Request body for creating a DataSync task.",
+  "type": "object",
+  "required": [
+    "SourceLocationArn",
+    "DestinationLocationArn"
+  ],
+  "properties": {
+    "SourceLocationArn": {
+      "type": "string"
+    },
+    "DestinationLocationArn": {
+      "type": "string"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "CloudWatchLogGroupArn": {
+      "type": "string"
+    },
+    "Options": {
+      "type": "object"
+    },
+    "Tags": {
+      "type": "array"
+    }
+  }
+}

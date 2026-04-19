@@ -1,0 +1,143 @@
+id: https://api-evangelist.github.io/amazon-datasync/capabilities/shared/datasync.yaml
+name: Amazon DataSync API
+description: Naftiko shared capability definition for Amazon DataSync API, providing programmatic access to manage data transfer tasks, locations, agents, and task executions for automated data movement between storage systems.
+version: 1.0.0-alpha1
+specificationVersion: 1.0.0-alpha1
+
+provider:
+  name: Amazon Web Services
+  url: https://aws.amazon.com
+
+tags:
+  - AWS
+  - Data Transfer
+  - Migration
+  - Storage
+
+rest:
+  port: 8100
+  baseURL: https://datasync.amazonaws.com
+  auth:
+    type: aws-signature-v4
+    service: datasync
+  resources:
+    - name: Tasks
+      description: Manage DataSync data transfer tasks
+      operations:
+        - operationId: createTask
+          summary: Create Task
+          method: POST
+          path: /
+        - operationId: listTasks
+          summary: List Tasks
+          method: POST
+          path: /
+        - operationId: describeTask
+          summary: Describe Task
+          method: POST
+          path: /
+        - operationId: updateTask
+          summary: Update Task
+          method: POST
+          path: /
+        - operationId: deleteTask
+          summary: Delete Task
+          method: POST
+          path: /
+    - name: Task Executions
+      description: Manage and monitor task execution runs
+      operations:
+        - operationId: startTaskExecution
+          summary: Start Task Execution
+          method: POST
+          path: /
+        - operationId: listTaskExecutions
+          summary: List Task Executions
+          method: POST
+          path: /
+        - operationId: describeTaskExecution
+          summary: Describe Task Execution
+          method: POST
+          path: /
+        - operationId: cancelTaskExecution
+          summary: Cancel Task Execution
+          method: POST
+          path: /
+    - name: Locations
+      description: Manage storage locations for data transfer
+      operations:
+        - operationId: createLocationS3
+          summary: Create Location S3
+          method: POST
+          path: /
+        - operationId: createLocationNfs
+          summary: Create Location NFS
+          method: POST
+          path: /
+        - operationId: createLocationSmb
+          summary: Create Location SMB
+          method: POST
+          path: /
+        - operationId: listLocations
+          summary: List Locations
+          method: POST
+          path: /
+        - operationId: describeLocation
+          summary: Describe Location
+          method: POST
+          path: /
+        - operationId: deleteLocation
+          summary: Delete Location
+          method: POST
+          path: /
+    - name: Agents
+      description: Manage DataSync agents for on-premises transfers
+      operations:
+        - operationId: createAgent
+          summary: Create Agent
+          method: POST
+          path: /
+        - operationId: listAgents
+          summary: List Agents
+          method: POST
+          path: /
+        - operationId: describeAgent
+          summary: Describe Agent
+          method: POST
+          path: /
+        - operationId: updateAgent
+          summary: Update Agent
+          method: POST
+          path: /
+        - operationId: deleteAgent
+          summary: Delete Agent
+          method: POST
+          path: /
+
+mcp:
+  port: 9100
+  tools:
+    - name: create_task
+      description: Create a new DataSync transfer task
+      operationId: createTask
+    - name: list_tasks
+      description: List all DataSync tasks
+      operationId: listTasks
+    - name: start_task_execution
+      description: Start a DataSync task execution
+      operationId: startTaskExecution
+    - name: describe_task_execution
+      description: Get the status of a task execution
+      operationId: describeTaskExecution
+    - name: create_location_s3
+      description: Create an Amazon S3 storage location
+      operationId: createLocationS3
+    - name: list_locations
+      description: List all configured DataSync locations
+      operationId: listLocations
+    - name: create_agent
+      description: Activate a DataSync agent
+      operationId: createAgent
+    - name: list_agents
+      description: List all DataSync agents
+      operationId: listAgents

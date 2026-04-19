@@ -1,0 +1,7 @@
+{
+  "S3BucketArn": "arn:aws:s3:::my-datasync-bucket",
+  "Subdirectory": "/data",
+  "S3Config": {
+    "BucketAccessRoleArn": "arn:aws:iam::123456789012:role/DataSyncS3Role"
+  }
+}

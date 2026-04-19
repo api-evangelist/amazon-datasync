@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://api-evangelist.github.io/amazon-datasync/json-structure/error-structure.json",
+  "title": "Error",
+  "description": "Standard error response from the DataSync API.",
+  "type": "typedMap",
+  "fields": {
+    "message": {
+      "type": "str",
+      "description": "message"
+    },
+    "errorCode": {
+      "type": "str",
+      "description": "errorCode"
+    }
+  }
+}

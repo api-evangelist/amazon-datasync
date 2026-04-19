@@ -1,0 +1,7 @@
+{
+  "VerifyMode": "POINT_IN_TIME_CONSISTENT",
+  "OverwriteMode": "ALWAYS",
+  "Atime": "BEST_EFFORT",
+  "Mtime": "PRESERVE",
+  "PreserveDeletedFiles": "PRESERVE"
+}

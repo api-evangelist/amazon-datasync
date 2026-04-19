@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/amazon-datasync/json-schema/agent-schema.json",
+  "title": "Agent",
+  "description": "A DataSync agent deployed on-premises or in a VPC for data transfer.",
+  "type": "object",
+  "properties": {
+    "AgentArn": {
+      "type": "string",
+      "description": "The ARN of the DataSync agent. This ARN uniquely identifies the agent."
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Status": {
+      "type": "string",
+      "enum": [
+        "ONLINE",
+        "OFFLINE"
+      ]
+    },
+    "CreationTime": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

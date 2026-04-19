@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/amazon-datasync/json-schema/location-schema.json",
+  "title": "Location",
+  "description": "A DataSync location representing a source or destination storage system.",
+  "type": "object",
+  "properties": {
+    "LocationArn": {
+      "type": "string",
+      "description": "The ARN of the DataSync location. This ARN uniquely identifies the location."
+    },
+    "LocationUri": {
+      "type": "string",
+      "description": "The URL of the location"
+    },
+    "CreationTime": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

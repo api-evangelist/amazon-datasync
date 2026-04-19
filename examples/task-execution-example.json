@@ -1,0 +1,7 @@
+{
+  "TaskExecutionArn": "arn:aws:datasync:us-east-1:123456789012:task/task-01234567890EXAMPLE/execution/exec-01234EXAMPLE",
+  "Status": "SUCCESS",
+  "EstimatedFilesToTransfer": 1000,
+  "FilesTransferred": 1000,
+  "BytesTransferred": 524288000
+}

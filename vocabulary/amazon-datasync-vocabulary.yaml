@@ -1,0 +1,126 @@
+id: https://api-evangelist.github.io/amazon-datasync/vocabulary/amazon-datasync-vocabulary.yaml
+name: Amazon DataSync Vocabulary
+description: Controlled vocabulary for Amazon DataSync covering tasks, locations, agents, task executions, and data transfer concepts.
+version: 1.0.0
+specificationVersion: 1.0.0
+
+tags:
+  - AWS
+  - Data Transfer
+  - Migration
+  - Storage
+
+operational:
+  resources:
+    - term: Task
+      definition: A DataSync configuration defining source location, destination location, and transfer options for data movement
+    - term: Location
+      definition: A DataSync endpoint representing a source or destination storage system (S3, NFS, SMB, EFS, FSx, HDFS)
+    - term: Agent
+      definition: A DataSync software agent deployed on-premises or in a VPC that connects to local storage systems
+    - term: TaskExecution
+      definition: A specific run of a DataSync task that transfers data from source to destination
+    - term: FilterRule
+      definition: A rule that includes or excludes files from a DataSync task based on patterns
+    - term: Options
+      definition: Configuration settings for a task controlling verification, overwrite behavior, timestamps, and permissions
+
+  actions:
+    - term: CreateTask
+      definition: Create a new DataSync task defining source and destination for data transfer
+    - term: StartTaskExecution
+      definition: Initiate a data transfer run for a DataSync task
+    - term: CancelTaskExecution
+      definition: Stop an in-progress task execution
+    - term: CreateLocationS3
+      definition: Create an Amazon S3 bucket as a DataSync source or destination location
+    - term: CreateLocationNfs
+      definition: Create an NFS mount as a DataSync source or destination location
+    - term: CreateLocationSmb
+      definition: Create an SMB share as a DataSync source or destination location
+    - term: CreateAgent
+      definition: Activate a DataSync agent using an activation key
+    - term: DeleteTask
+      definition: Remove a DataSync task permanently
+
+  taskStatuses:
+    - term: AVAILABLE
+      definition: Task is configured and ready to be executed
+    - term: CREATING
+      definition: Task is being created and configured
+    - term: RUNNING
+      definition: Task execution is currently transferring data
+    - term: QUEUED
+      definition: Task execution is waiting to start
+    - term: UNAVAILABLE
+      definition: Task cannot run due to configuration or connectivity issues
+
+  executionStatuses:
+    - term: QUEUED
+      definition: Execution is waiting to start
+    - term: LAUNCHING
+      definition: Execution is initializing resources
+    - term: PREPARING
+      definition: Execution is scanning source files
+    - term: TRANSFERRING
+      definition: Execution is actively copying data
+    - term: VERIFYING
+      definition: Execution is verifying data integrity at destination
+    - term: SUCCESS
+      definition: Execution completed successfully with all files transferred
+    - term: ERROR
+      definition: Execution failed due to an error
+
+  locationTypes:
+    - term: S3
+      definition: Amazon S3 bucket location for cloud storage source or destination
+    - term: NFS
+      definition: NFS (Network File System) mount on-premises or in VPC
+    - term: SMB
+      definition: SMB (Server Message Block) Windows file share on-premises or in VPC
+    - term: EFS
+      definition: Amazon Elastic File System for shared file storage
+    - term: FSX_WINDOWS
+      definition: Amazon FSx for Windows File Server
+    - term: FSX_LUSTRE
+      definition: Amazon FSx for Lustre high-performance file system
+    - term: HDFS
+      definition: Hadoop Distributed File System on-premises or in cloud
+
+capability:
+  personas:
+    - term: Storage Administrator
+      definition: Administrator responsible for managing storage systems and data movement policies
+    - term: Cloud Migration Engineer
+      definition: Engineer executing one-time or phased data migrations from on-premises to AWS
+    - term: Data Platform Engineer
+      definition: Engineer maintaining ongoing data synchronization between storage systems
+
+  workflows:
+    - term: Migrate Data to S3
+      definition: End-to-end workflow for migrating on-premises data to Amazon S3 using DataSync
+    - term: Monitor Ongoing Synchronization
+      definition: Reviewing execution history and metrics for scheduled synchronization tasks
+    - term: Set Up Recurring Transfer
+      definition: Configuring a scheduled task for ongoing data synchronization
+
+crossReference:
+  awsServices:
+    - term: Amazon S3
+      definition: Primary cloud destination for DataSync transfers, supporting multiple storage classes
+      url: https://aws.amazon.com/s3/
+    - term: Amazon EFS
+      definition: Elastic File System as DataSync source or destination for shared file storage
+      url: https://aws.amazon.com/efs/
+    - term: Amazon FSx
+      definition: Managed file systems (Windows, Lustre, NetApp ONTAP) supported as DataSync locations
+      url: https://aws.amazon.com/fsx/
+    - term: Amazon CloudWatch
+      definition: Receives DataSync transfer metrics and task execution logs for monitoring
+      url: https://aws.amazon.com/cloudwatch/
+    - term: AWS Snowball
+      definition: Physical data transfer device complementing DataSync for large offline migrations
+      url: https://aws.amazon.com/snowball/
+    - term: AWS Storage Gateway
+      definition: Hybrid storage service that can work alongside DataSync for on-premises integration
+      url: https://aws.amazon.com/storagegateway/

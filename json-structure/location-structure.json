@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://api-evangelist.github.io/amazon-datasync/json-structure/location-structure.json",
+  "title": "Location",
+  "description": "A DataSync location representing a source or destination storage system.",
+  "type": "typedMap",
+  "fields": {
+    "LocationArn": {
+      "type": "str",
+      "description": "The ARN of the DataSync location. This ARN uniquely identifies the location."
+    },
+    "LocationUri": {
+      "type": "str",
+      "description": "The URL of the location"
+    },
+    "CreationTime": {
+      "type": "str",
+      "description": "CreationTime"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/amazon-datasync/json-schema/error-schema.json",
+  "title": "Error",
+  "description": "Standard error response from the DataSync API.",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string"
+    },
+    "errorCode": {
+      "type": "string"
+    }
+  }
+}

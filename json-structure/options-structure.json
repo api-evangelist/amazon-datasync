@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://api-evangelist.github.io/amazon-datasync/json-structure/options-structure.json",
+  "title": "Options",
+  "description": "Configuration options for a DataSync task defining transfer behavior.",
+  "type": "typedMap",
+  "fields": {
+    "VerifyMode": {
+      "type": "str",
+      "description": "VerifyMode"
+    },
+    "OverwriteMode": {
+      "type": "str",
+      "description": "OverwriteMode"
+    },
+    "Atime": {
+      "type": "str",
+      "description": "Atime"
+    },
+    "Mtime": {
+      "type": "str",
+      "description": "Mtime"
+    },
+    "PreserveDeletedFiles": {
+      "type": "str",
+      "description": "PreserveDeletedFiles"
+    }
+  }
+}

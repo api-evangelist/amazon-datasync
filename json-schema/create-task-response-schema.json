@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/amazon-datasync/json-schema/create-task-response-schema.json",
+  "title": "Create Task Response",
+  "description": "Response after creating a DataSync task.",
+  "type": "object",
+  "properties": {
+    "TaskArn": {
+      "type": "string",
+      "description": "The ARN of the newly created task"
+    }
+  }
+}
