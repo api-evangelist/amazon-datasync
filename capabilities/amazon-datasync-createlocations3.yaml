@@ -1,0 +1,82 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: 'Amazon DataSync REST API — #CreateLocationS3'
+  description: 'Amazon DataSync REST API — #CreateLocationS3. 1 operations. Lead operation: Amazon DataSync Create Location
+    S3. Self-contained Naftiko capability covering one Amazon Datasync business surface.'
+  tags:
+  - Amazon Datasync
+  - '#CreateLocationS3'
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_DATASYNC_API_KEY: AMAZON_DATASYNC_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-datasync-createlocations3
+    baseUri: https://datasync.{region}.amazonaws.com
+    description: 'Amazon DataSync REST API — #CreateLocationS3 business capability. Self-contained, no shared references.'
+    resources:
+    - name: '#CreateLocationS3'
+      path: /#CreateLocationS3
+      operations:
+      - name: createlocations3
+        method: POST
+        description: Amazon DataSync Create Location S3
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_DATASYNC_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-datasync-createlocations3-rest
+    port: 8080
+    description: 'REST adapter for Amazon DataSync REST API — #CreateLocationS3. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.'
+    resources:
+    - path: /v1/createlocations3
+      name: createlocations3
+      description: 'REST surface for #CreateLocationS3.'
+      operations:
+      - method: POST
+        name: createlocations3
+        description: Amazon DataSync Create Location S3
+        call: amazon-datasync-createlocations3.createlocations3
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-datasync-createlocations3-mcp
+    port: 9090
+    transport: http
+    description: 'MCP adapter for Amazon DataSync REST API — #CreateLocationS3. One tool per consumed operation, routed inline
+      through this capability''s consumes block.'
+    tools:
+    - name: amazon-datasync-create-location-s3
+      description: Amazon DataSync Create Location S3
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-datasync-createlocations3.createlocations3
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

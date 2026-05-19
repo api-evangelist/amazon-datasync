@@ -1,0 +1,82 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: 'Amazon DataSync REST API — #StartTaskExecution'
+  description: 'Amazon DataSync REST API — #StartTaskExecution. 1 operations. Lead operation: Amazon DataSync Start Task Execution.
+    Self-contained Naftiko capability covering one Amazon Datasync business surface.'
+  tags:
+  - Amazon Datasync
+  - '#StartTaskExecution'
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_DATASYNC_API_KEY: AMAZON_DATASYNC_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-datasync-starttaskexecution
+    baseUri: https://datasync.{region}.amazonaws.com
+    description: 'Amazon DataSync REST API — #StartTaskExecution business capability. Self-contained, no shared references.'
+    resources:
+    - name: '#StartTaskExecution'
+      path: /#StartTaskExecution
+      operations:
+      - name: starttaskexecution
+        method: POST
+        description: Amazon DataSync Start Task Execution
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_DATASYNC_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-datasync-starttaskexecution-rest
+    port: 8080
+    description: 'REST adapter for Amazon DataSync REST API — #StartTaskExecution. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.'
+    resources:
+    - path: /v1/starttaskexecution
+      name: starttaskexecution
+      description: 'REST surface for #StartTaskExecution.'
+      operations:
+      - method: POST
+        name: starttaskexecution
+        description: Amazon DataSync Start Task Execution
+        call: amazon-datasync-starttaskexecution.starttaskexecution
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-datasync-starttaskexecution-mcp
+    port: 9090
+    transport: http
+    description: 'MCP adapter for Amazon DataSync REST API — #StartTaskExecution. One tool per consumed operation, routed
+      inline through this capability''s consumes block.'
+    tools:
+    - name: amazon-datasync-start-task-execution
+      description: Amazon DataSync Start Task Execution
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-datasync-starttaskexecution.starttaskexecution
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

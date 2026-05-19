@@ -1,0 +1,82 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: 'Amazon DataSync REST API — #DescribeTask'
+  description: 'Amazon DataSync REST API — #DescribeTask. 1 operations. Lead operation: Amazon DataSync Describe Task. Self-contained
+    Naftiko capability covering one Amazon Datasync business surface.'
+  tags:
+  - Amazon Datasync
+  - '#DescribeTask'
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_DATASYNC_API_KEY: AMAZON_DATASYNC_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-datasync-describetask
+    baseUri: https://datasync.{region}.amazonaws.com
+    description: 'Amazon DataSync REST API — #DescribeTask business capability. Self-contained, no shared references.'
+    resources:
+    - name: '#DescribeTask'
+      path: /#DescribeTask
+      operations:
+      - name: describetask
+        method: POST
+        description: Amazon DataSync Describe Task
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_DATASYNC_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-datasync-describetask-rest
+    port: 8080
+    description: 'REST adapter for Amazon DataSync REST API — #DescribeTask. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.'
+    resources:
+    - path: /v1/describetask
+      name: describetask
+      description: 'REST surface for #DescribeTask.'
+      operations:
+      - method: POST
+        name: describetask
+        description: Amazon DataSync Describe Task
+        call: amazon-datasync-describetask.describetask
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-datasync-describetask-mcp
+    port: 9090
+    transport: http
+    description: 'MCP adapter for Amazon DataSync REST API — #DescribeTask. One tool per consumed operation, routed inline
+      through this capability''s consumes block.'
+    tools:
+    - name: amazon-datasync-describe-task
+      description: Amazon DataSync Describe Task
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-datasync-describetask.describetask
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
