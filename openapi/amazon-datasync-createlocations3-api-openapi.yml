@@ -1,0 +1,82 @@
+openapi: 3.1.0
+info:
+  title: 'Amazon DataSync REST Amazon DataSync REST API #CreateLocationS3 API'
+  description: AWS DataSync is an online data transfer service that simplifies, automates, and accelerates moving data between on-premises storage systems and AWS storage services. This API enables management of transfer tasks, source and destination locations, agents, and task executions.
+  version: '2018-11-09'
+  contact:
+    name: AWS Support
+    url: https://aws.amazon.com/premiumsupport/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://aws.amazon.com/service-terms/
+  x-logo:
+    url: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+servers:
+- url: https://datasync.{region}.amazonaws.com
+  description: Amazon DataSync regional endpoint
+  variables:
+    region:
+      default: us-east-1
+      description: AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - eu-west-1
+      - eu-west-2
+      - eu-central-1
+      - ap-northeast-1
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-south-1
+      - sa-east-1
+security:
+- sigv4: []
+tags:
+- name: '#CreateLocationS3'
+paths:
+  /#CreateLocationS3:
+    post:
+      summary: Amazon DataSync Create Location S3
+      description: Creates a transfer location for an Amazon S3 bucket.
+      operationId: createLocationS3
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              $ref: '#/components/schemas/CreateLocationS3Request'
+      responses:
+        '200':
+          description: Successful response
+      x-amz-target: FmrsService.CreateLocationS3
+      tags:
+      - '#CreateLocationS3'
+components:
+  schemas:
+    CreateLocationS3Request:
+      type: object
+      required:
+      - S3BucketArn
+      - S3Config
+      properties:
+        S3BucketArn:
+          type: string
+        S3Config:
+          type: object
+          properties:
+            BucketAccessRoleArn:
+              type: string
+        Subdirectory:
+          type: string
+  securitySchemes:
+    sigv4:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: AWS Signature Version 4
+externalDocs:
+  description: Amazon DataSync API Reference
+  url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html

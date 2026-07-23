@@ -1,0 +1,152 @@
+openapi: 3.1.0
+info:
+  title: Amazon DataSync REST Amazon DataSync REST API API
+  description: AWS DataSync is an online data transfer service that simplifies, automates, and accelerates moving data between on-premises storage systems and AWS storage services. This API enables management of transfer tasks, source and destination locations, agents, and task executions.
+  version: '2018-11-09'
+  contact:
+    name: AWS Support
+    url: https://aws.amazon.com/premiumsupport/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://aws.amazon.com/service-terms/
+  x-logo:
+    url: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+servers:
+- url: https://datasync.{region}.amazonaws.com
+  description: Amazon DataSync regional endpoint
+  variables:
+    region:
+      default: us-east-1
+      description: AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - eu-west-1
+      - eu-west-2
+      - eu-central-1
+      - ap-northeast-1
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-south-1
+      - sa-east-1
+security:
+- sigv4: []
+tags:
+- name: Amazon DataSync REST API
+paths:
+  /:
+    post:
+      summary: Amazon DataSync Create Task
+      description: Configures a task, which defines where and how DataSync transfers your data.
+      operationId: createTask
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              $ref: '#/components/schemas/CreateTaskRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+      x-amz-target: FmrsService.CreateTask
+      tags:
+      - Amazon DataSync REST API
+components:
+  schemas:
+    TaskSchedule:
+      type: object
+      required:
+      - ScheduleExpression
+      properties:
+        ScheduleExpression:
+          type: string
+    TagListEntry:
+      type: object
+      required:
+      - Key
+      properties:
+        Key:
+          type: string
+        Value:
+          type: string
+    CreateTaskRequest:
+      type: object
+      required:
+      - SourceLocationArn
+      - DestinationLocationArn
+      properties:
+        SourceLocationArn:
+          type: string
+        DestinationLocationArn:
+          type: string
+        Name:
+          type: string
+        Options:
+          $ref: '#/components/schemas/Options'
+        Schedule:
+          $ref: '#/components/schemas/TaskSchedule'
+        Tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagListEntry'
+    CreateTaskResponse:
+      type: object
+      properties:
+        TaskArn:
+          type: string
+    Options:
+      type: object
+      properties:
+        VerifyMode:
+          type: string
+          enum:
+          - POINT_IN_TIME_CONSISTENT
+          - ONLY_FILES_TRANSFERRED
+          - NONE
+        OverwriteMode:
+          type: string
+          enum:
+          - ALWAYS
+          - NEVER
+        Atime:
+          type: string
+          enum:
+          - NONE
+          - BEST_EFFORT
+        Mtime:
+          type: string
+          enum:
+          - NONE
+          - PRESERVE
+        PreserveDeletedFiles:
+          type: string
+          enum:
+          - PRESERVE
+          - REMOVE
+        TransferMode:
+          type: string
+          enum:
+          - CHANGED
+          - ALL
+        LogLevel:
+          type: string
+          enum:
+          - false
+          - BASIC
+          - TRANSFER
+  securitySchemes:
+    sigv4:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: AWS Signature Version 4
+externalDocs:
+  description: Amazon DataSync API Reference
+  url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
