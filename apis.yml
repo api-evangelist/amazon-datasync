@@ -6,7 +6,20 @@ description: >-
   10 times faster than open-source tools by using purpose-built network protocol and parallel multi-threaded
   architecture. It supports NFS, SMB, HDFS, S3, EFS, FSx, and more as transfer endpoints.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-datasync.png
 tags:
   - AWS
   - Data Transfer
@@ -19,47 +32,203 @@ created: '2024-01-15'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: amazon-datasync:amazon-datasync-api
-    name: Amazon DataSync REST API
-    description: >-
-      RESTful API for AWS DataSync enabling management of data transfer tasks, locations, agents, and task executions
-      for automated data movement between on-premises storage systems and AWS cloud storage. Supports NFS, SMB, S3, EFS,
-      FSx, and HDFS as transfer endpoints.
-    humanURL: https://aws.amazon.com/datasync/
-    baseURL: https://datasync.amazonaws.com
-    tags:
-      - Data Transfer
-      - Migration
-      - Storage
-      - Automation
-    properties:
-      - type: Documentation
-        url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
-      - type: OpenAPI
-        url: openapi/amazon-datasync-api-openapi.yml
-      - type: OpenAPI
-        url: https://api.apis.guru/v2/specs/amazonaws.com/datasync/2018-11-09/openapi.yaml
-      - type: GettingStarted
-        url: https://aws.amazon.com/datasync/getting-started/
-      - type: Pricing
-        url: https://aws.amazon.com/datasync/pricing/
-      - type: FAQ
-        url: https://aws.amazon.com/datasync/faqs/
-      - type: APIReference
-        url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
-      - type: Authentication
-        url: https://docs.aws.amazon.com/datasync/latest/userguide/security.html
-      - type: JSONSchema
-        url: json-schema/task-schema.json
-      - type: JSONSchema
-        url: json-schema/location-schema.json
-      - type: JSONSchema
-        url: json-schema/agent-schema.json
-      - type: JSONSchema
-        url: json-schema/task-execution-schema.json
-      - type: JSONLD
-        url: json-ld/amazon-datasync-context.jsonld
+- aid: amazon-datasync:amazon-datasync-amazon-datasync-rest-api-api
+  name: Amazon DataSync Amazon DataSync REST API API
+  description: >-
+    The Amazon DataSync REST API API from Amazon DataSync — 1 operation(s) for amazon datasync rest api.
+  humanURL: https://aws.amazon.com/datasync/
+  baseURL: https://datasync.amazonaws.com
+  tags:
+  - Amazon DataSync REST API
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-datasync-amazon-datasync-rest-api-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/datasync/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/datasync/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/datasync/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/security.html
+  - type: JSONSchema
+    url: json-schema/task-schema.json
+  - type: JSONSchema
+    url: json-schema/location-schema.json
+  - type: JSONSchema
+    url: json-schema/agent-schema.json
+  - type: JSONSchema
+    url: json-schema/task-execution-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-datasync-context.jsonld
+- aid: amazon-datasync:amazon-datasync-createagent-api
+  name: 'Amazon DataSync #CreateAgent API'
+  description: 'The #CreateAgent API from Amazon DataSync — 1 operation(s) for #createagent.'
+  humanURL: https://aws.amazon.com/datasync/
+  baseURL: https://datasync.amazonaws.com
+  tags:
+  - '#CreateAgent'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-datasync-createagent-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/datasync/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/datasync/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/datasync/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/security.html
+  - type: JSONSchema
+    url: json-schema/task-schema.json
+  - type: JSONSchema
+    url: json-schema/location-schema.json
+  - type: JSONSchema
+    url: json-schema/agent-schema.json
+  - type: JSONSchema
+    url: json-schema/task-execution-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-datasync-context.jsonld
+- aid: amazon-datasync:amazon-datasync-createlocations3-api
+  name: 'Amazon DataSync #CreateLocationS3 API'
+  description: 'The #CreateLocationS3 API from Amazon DataSync — 1 operation(s) for #createlocations3.'
+  humanURL: https://aws.amazon.com/datasync/
+  baseURL: https://datasync.amazonaws.com
+  tags:
+  - '#CreateLocationS3'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-datasync-createlocations3-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/datasync/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/datasync/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/datasync/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/security.html
+  - type: JSONSchema
+    url: json-schema/task-schema.json
+  - type: JSONSchema
+    url: json-schema/location-schema.json
+  - type: JSONSchema
+    url: json-schema/agent-schema.json
+  - type: JSONSchema
+    url: json-schema/task-execution-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-datasync-context.jsonld
+- aid: amazon-datasync:amazon-datasync-describetask-api
+  name: 'Amazon DataSync #DescribeTask API'
+  description: 'The #DescribeTask API from Amazon DataSync — 1 operation(s) for #describetask.'
+  humanURL: https://aws.amazon.com/datasync/
+  baseURL: https://datasync.amazonaws.com
+  tags:
+  - '#DescribeTask'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-datasync-describetask-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/datasync/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/datasync/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/datasync/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/security.html
+  - type: JSONSchema
+    url: json-schema/task-schema.json
+  - type: JSONSchema
+    url: json-schema/location-schema.json
+  - type: JSONSchema
+    url: json-schema/agent-schema.json
+  - type: JSONSchema
+    url: json-schema/task-execution-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-datasync-context.jsonld
+- aid: amazon-datasync:amazon-datasync-listtasks-api
+  name: 'Amazon DataSync #ListTasks API'
+  description: 'The #ListTasks API from Amazon DataSync — 1 operation(s) for #listtasks.'
+  humanURL: https://aws.amazon.com/datasync/
+  baseURL: https://datasync.amazonaws.com
+  tags:
+  - '#ListTasks'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-datasync-listtasks-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/datasync/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/datasync/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/datasync/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/security.html
+  - type: JSONSchema
+    url: json-schema/task-schema.json
+  - type: JSONSchema
+    url: json-schema/location-schema.json
+  - type: JSONSchema
+    url: json-schema/agent-schema.json
+  - type: JSONSchema
+    url: json-schema/task-execution-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-datasync-context.jsonld
+- aid: amazon-datasync:amazon-datasync-starttaskexecution-api
+  name: 'Amazon DataSync #StartTaskExecution API'
+  description: >-
+    The #StartTaskExecution API from Amazon DataSync — 1 operation(s) for #starttaskexecution.
+  humanURL: https://aws.amazon.com/datasync/
+  baseURL: https://datasync.amazonaws.com
+  tags:
+  - '#StartTaskExecution'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-datasync-starttaskexecution-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/datasync/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/datasync/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/datasync/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/security.html
+  - type: JSONSchema
+    url: json-schema/task-schema.json
+  - type: JSONSchema
+    url: json-schema/location-schema.json
+  - type: JSONSchema
+    url: json-schema/agent-schema.json
+  - type: JSONSchema
+    url: json-schema/task-execution-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-datasync-context.jsonld
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/amazon-datasync/overview
   - type: AgenticAccess
     url: agentic-access/amazon-datasync-agentic-access.yml
   - type: TrustCenter
