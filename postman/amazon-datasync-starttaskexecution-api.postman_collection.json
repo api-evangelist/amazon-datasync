@@ -1,0 +1,131 @@
+{
+  "info": {
+    "_postman_id": "35bea561-706d-492d-b74a-c3003cdda1ef",
+    "name": "Amazon DataSync REST Amazon DataSync REST API #StartTaskExecution API",
+    "description": "AWS DataSync is an online data transfer service that simplifies, automates, and accelerates moving data between on-premises storage systems and AWS storage services. This API enables management of transfer tasks, source and destination locations, agents, and task executions.\n\nContact Support:\n Name: AWS Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:33:24.000Z",
+    "updatedAt": "2026-07-28T00:33:24.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-35bea561-706d-492d-b74a-c3003cdda1ef"
+  },
+  "item": [
+    {
+      "name": "#StartTaskExecution",
+      "item": [
+        {
+          "name": "Amazon DataSync Start Task Execution",
+          "id": "0813fa6a-4bec-41aa-aa6e-58f8a655267a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"TaskArn\": \"<string>\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#StartTaskExecution",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "StartTaskExecution"
+            },
+            "description": "Starts an existing DataSync task. By starting a task, you tell DataSync to immediately begin transferring data."
+          },
+          "response": [
+            {
+              "id": "d64073e6-7274-49e2-bf49-124c1b2037f6",
+              "name": "Successful response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.1"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"TaskArn\": \"<string>\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#StartTaskExecution",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "StartTaskExecution"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:33:24.000Z",
+              "updatedAt": "2026-07-28T00:33:24.000Z",
+              "uid": "35240-d64073e6-7274-49e2-bf49-124c1b2037f6"
+            }
+          ],
+          "createdAt": "2026-07-28T00:33:24.000Z",
+          "updatedAt": "2026-07-28T00:33:24.000Z",
+          "uid": "35240-0813fa6a-4bec-41aa-aa6e-58f8a655267a"
+        }
+      ],
+      "id": "27910e40-cac9-4599-be11-439bf1c28080",
+      "createdAt": "2026-07-28T00:33:24.000Z",
+      "updatedAt": "2026-07-28T00:33:24.000Z",
+      "uid": "35240-27910e40-cac9-4599-be11-439bf1c28080"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://datasync.{{region}}.amazonaws.com"
+    }
+  ]
+}

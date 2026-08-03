@@ -1,0 +1,24 @@
+{
+  "provider": "amazon-datasync",
+  "sources": [
+    "amazon-datasync-amazon-datasync-rest-api-api-openapi.yml",
+    "amazon-datasync-createagent-api-openapi.yml",
+    "amazon-datasync-createlocations3-api-openapi.yml",
+    "amazon-datasync-describetask-api-openapi.yml",
+    "amazon-datasync-listtasks-api-openapi.yml",
+    "amazon-datasync-starttaskexecution-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-datasync-amazon-datasync-rest-api-api-openapi.yml",
+    "amazon-datasync-createagent-api-openapi.yml",
+    "amazon-datasync-createlocations3-api-openapi.yml",
+    "amazon-datasync-describetask-api-openapi.yml",
+    "amazon-datasync-listtasks-api-openapi.yml",
+    "amazon-datasync-starttaskexecution-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

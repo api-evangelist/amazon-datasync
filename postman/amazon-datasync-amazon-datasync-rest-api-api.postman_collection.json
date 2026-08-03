@@ -1,0 +1,142 @@
+{
+  "info": {
+    "_postman_id": "9597518e-72bd-4fef-b774-27e86c995d38",
+    "name": "Amazon DataSync REST Amazon DataSync REST API API",
+    "description": "AWS DataSync is an online data transfer service that simplifies, automates, and accelerates moving data between on-premises storage systems and AWS storage services. This API enables management of transfer tasks, source and destination locations, agents, and task executions.\n\nContact Support:\n Name: AWS Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:33:19.000Z",
+    "updatedAt": "2026-07-28T00:33:19.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9597518e-72bd-4fef-b774-27e86c995d38"
+  },
+  "item": [
+    {
+      "name": "/",
+      "item": [
+        {
+          "name": "Amazon DataSync Create Task",
+          "id": "39782e24-e5da-4da7-8241-28362ec115ad",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"SourceLocationArn\": \"<string>\",\n  \"DestinationLocationArn\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"Options\": {\n    \"VerifyMode\": \"ONLY_FILES_TRANSFERRED\",\n    \"OverwriteMode\": \"NEVER\",\n    \"Atime\": \"NONE\",\n    \"Mtime\": \"NONE\",\n    \"PreserveDeletedFiles\": \"REMOVE\",\n    \"TransferMode\": \"ALL\",\n    \"LogLevel\": \"false\"\n  },\n  \"Schedule\": {\n    \"ScheduleExpression\": \"<string>\"\n  },\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ]
+            },
+            "description": "Configures a task, which defines where and how DataSync transfers your data."
+          },
+          "response": [
+            {
+              "id": "6a8ab697-ee4b-4fae-be23-dbcdb1d7eaa6",
+              "name": "Successful response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.1"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"SourceLocationArn\": \"<string>\",\n  \"DestinationLocationArn\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"Options\": {\n    \"VerifyMode\": \"ONLY_FILES_TRANSFERRED\",\n    \"OverwriteMode\": \"NEVER\",\n    \"Atime\": \"NONE\",\n    \"Mtime\": \"NONE\",\n    \"PreserveDeletedFiles\": \"REMOVE\",\n    \"TransferMode\": \"ALL\",\n    \"LogLevel\": \"false\"\n  },\n  \"Schedule\": {\n    \"ScheduleExpression\": \"<string>\"\n  },\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"TaskArn\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T00:33:19.000Z",
+              "updatedAt": "2026-07-28T00:33:19.000Z",
+              "uid": "35240-6a8ab697-ee4b-4fae-be23-dbcdb1d7eaa6"
+            }
+          ],
+          "createdAt": "2026-07-28T00:33:19.000Z",
+          "updatedAt": "2026-07-28T00:33:19.000Z",
+          "uid": "35240-39782e24-e5da-4da7-8241-28362ec115ad"
+        }
+      ],
+      "id": "1cc293fe-3fc6-4d3e-9fff-2e7a0e41fdcb",
+      "createdAt": "2026-07-28T00:33:19.000Z",
+      "updatedAt": "2026-07-28T00:33:19.000Z",
+      "uid": "35240-1cc293fe-3fc6-4d3e-9fff-2e7a0e41fdcb"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://datasync.{{region}}.amazonaws.com"
+    }
+  ]
+}
