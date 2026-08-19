@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon DataSync REST Amazon DataSync REST API #StartTaskExecution API",
+    "version": "2018-11-09"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "#StartTaskExecution",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon DataSync Start Task Execution",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datasync.{region}.amazonaws.com/#StartTaskExecution",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Starts an existing DataSync task. By starting a task, you tell DataSync to immediately begin transferring data."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon DataSync REST Amazon DataSync REST API #ListTasks API",
+    "version": "2018-11-09"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "#ListTasks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon DataSync List Tasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datasync.{region}.amazonaws.com/#ListTasks",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns a list of the DataSync tasks you created."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

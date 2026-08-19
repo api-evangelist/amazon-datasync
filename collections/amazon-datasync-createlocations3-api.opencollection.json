@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon DataSync REST Amazon DataSync REST API #CreateLocationS3 API",
+    "version": "2018-11-09"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "#CreateLocationS3",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon DataSync Create Location S3",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datasync.{region}.amazonaws.com/#CreateLocationS3",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a transfer location for an Amazon S3 bucket."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

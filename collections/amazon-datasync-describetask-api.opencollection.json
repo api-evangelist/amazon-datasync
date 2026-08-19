@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon DataSync REST Amazon DataSync REST API #DescribeTask API",
+    "version": "2018-11-09"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "#DescribeTask",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon DataSync Describe Task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datasync.{region}.amazonaws.com/#DescribeTask",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Provides information about a DataSync transfer task."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
