@@ -6,6 +6,18 @@ description: >-
   10 times faster than open-source tools by using purpose-built network protocol and parallel multi-threaded
   architecture. It supports NFS, SMB, HDFS, S3, EFS, FSx, and more as transfer endpoints.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
