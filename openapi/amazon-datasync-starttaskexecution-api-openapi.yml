@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: 'Amazon DataSync REST Amazon DataSync REST API #StartTaskExecution API'
+  title: 'Amazon DataSync REST Amazon DataSync REST API #StartTaskExecution #Start Task Execution #Start Task Execution API'
   description: AWS DataSync is an online data transfer service that simplifies, automates, and accelerates moving data between on-premises storage systems and AWS storage services. This API enables management of transfer tasks, source and destination locations, agents, and task executions.
   version: '2018-11-09'
   contact:
