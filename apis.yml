@@ -239,6 +239,8 @@ apis:
   - type: JSONLD
     url: json-ld/amazon-datasync-context.jsonld
 common:
+- type: Website
+  url: https://amazon.com
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-datasync/overview
 - type: AgenticAccess
