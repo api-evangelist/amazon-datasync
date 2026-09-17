@@ -47,8 +47,8 @@ specificationVersion: '0.23'
 apis:
 - aid: amazon-datasync:amazon-datasync-amazon-datasync-rest-api-api
   name: Amazon DataSync Amazon DataSync REST API
-  description: The Amazon DataSync REST API API from Amazon DataSync — 1 operation(s) for amazon datasync
-    rest api.
+  description: >-
+    The Amazon DataSync REST API API from Amazon DataSync — 1 operation(s) for amazon datasync rest api.
   humanURL: https://aws.amazon.com/datasync/
   baseURL: https://datasync.amazonaws.com
   tags:
@@ -56,38 +56,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-datasync-amazon-datasync-rest-api-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/datasync/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/datasync/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/datasync/faqs/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
-  - type: Authentication
-    url: https://docs.aws.amazon.com/datasync/latest/userguide/security.html
-  - type: JSONSchema
-    url: json-schema/task-schema.json
-  - type: JSONSchema
-    url: json-schema/location-schema.json
-  - type: JSONSchema
-    url: json-schema/agent-schema.json
-  - type: JSONSchema
-    url: json-schema/task-execution-schema.json
-  - type: JSONLD
-    url: json-ld/amazon-datasync-context.jsonld
-- aid: amazon-datasync:amazon-datasync-createagent-api
-  name: 'Amazon DataSync #CreateAgent API'
-  description: 'The #CreateAgent API from Amazon DataSync — 1 operation(s) for #createagent.'
-  humanURL: https://aws.amazon.com/datasync/
-  baseURL: https://datasync.amazonaws.com
-  tags:
-  - '#CreateAgent'
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-datasync-createagent-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
   - type: GettingStarted
@@ -208,7 +176,8 @@ apis:
     url: json-ld/amazon-datasync-context.jsonld
 - aid: amazon-datasync:amazon-datasync-starttaskexecution-api
   name: 'Amazon DataSync #StartTaskExecution API'
-  description: 'The #StartTaskExecution API from Amazon DataSync — 1 operation(s) for #starttaskexecution.'
+  description: >-
+    The #StartTaskExecution API from Amazon DataSync — 1 operation(s) for #starttaskexecution.
   humanURL: https://aws.amazon.com/datasync/
   baseURL: https://datasync.amazonaws.com
   tags:
@@ -216,6 +185,38 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-datasync-starttaskexecution-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/datasync/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/datasync/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/datasync/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/datasync/latest/userguide/security.html
+  - type: JSONSchema
+    url: json-schema/task-schema.json
+  - type: JSONSchema
+    url: json-schema/location-schema.json
+  - type: JSONSchema
+    url: json-schema/agent-schema.json
+  - type: JSONSchema
+    url: json-schema/task-execution-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-datasync-context.jsonld
+- aid: amazon-datasync:amazon-datasync-create-agent-api
+  name: 'Amazon DataSync #Create Agent API'
+  description: 'The #Create Agent API from Amazon DataSync — 1 operation(s) for #create agent.'
+  humanURL: https://aws.amazon.com/datasync/
+  baseURL: https://datasync.amazonaws.com
+  tags:
+  - '#Create Agent'
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-datasync-create-agent-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html
   - type: GettingStarted
