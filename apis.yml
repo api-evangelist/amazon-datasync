@@ -213,6 +213,8 @@ apis:
   humanURL: https://aws.amazon.com/datasync/
   baseURL: https://datasync.amazonaws.com
   tags:
+  - '#CreateAgent'
+  tags_raw:
   - '#Create Agent'
   properties:
   - type: OpenAPI
