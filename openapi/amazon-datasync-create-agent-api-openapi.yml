@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: 'Amazon DataSync REST Amazon DataSync REST API #CreateAgent #Create Agent #Create Agent API'
+  title: 'Amazon DataSync REST #Create Agent API'
   description: AWS DataSync is an online data transfer service that simplifies, automates, and accelerates moving data between on-premises storage systems and AWS storage services. This API enables management of transfer tasks, source and destination locations, agents, and task executions.
   version: '2018-11-09'
   contact:
@@ -35,7 +35,7 @@ servers:
 security:
 - sigv4: []
 tags:
-- name: '#CreateAgent'
+- name: '#Create Agent'
 paths:
   /#CreateAgent:
     post:
@@ -53,9 +53,18 @@ paths:
           description: Successful response
       x-amz-target: FmrsService.CreateAgent
       tags:
-      - '#CreateAgent'
+      - '#Create Agent'
 components:
   schemas:
+    TagListEntry:
+      type: object
+      required:
+      - Key
+      properties:
+        Key:
+          type: string
+        Value:
+          type: string
     CreateAgentRequest:
       type: object
       required:
@@ -69,15 +78,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TagListEntry'
-    TagListEntry:
-      type: object
-      required:
-      - Key
-      properties:
-        Key:
-          type: string
-        Value:
-          type: string
   securitySchemes:
     sigv4:
       type: apiKey

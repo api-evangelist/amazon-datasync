@@ -60,26 +60,6 @@ paths:
       - Amazon DataSync REST API
 components:
   schemas:
-    CreateTaskRequest:
-      type: object
-      required:
-      - SourceLocationArn
-      - DestinationLocationArn
-      properties:
-        SourceLocationArn:
-          type: string
-        DestinationLocationArn:
-          type: string
-        Name:
-          type: string
-        Options:
-          $ref: '#/components/schemas/Options'
-        Schedule:
-          $ref: '#/components/schemas/TaskSchedule'
-        Tags:
-          type: array
-          items:
-            $ref: '#/components/schemas/TagListEntry'
     Options:
       type: object
       properties:
@@ -120,6 +100,13 @@ components:
           - false
           - BASIC
           - TRANSFER
+    TaskSchedule:
+      type: object
+      required:
+      - ScheduleExpression
+      properties:
+        ScheduleExpression:
+          type: string
     CreateTaskResponse:
       type: object
       properties:
@@ -134,13 +121,26 @@ components:
           type: string
         Value:
           type: string
-    TaskSchedule:
+    CreateTaskRequest:
       type: object
       required:
-      - ScheduleExpression
+      - SourceLocationArn
+      - DestinationLocationArn
       properties:
-        ScheduleExpression:
+        SourceLocationArn:
           type: string
+        DestinationLocationArn:
+          type: string
+        Name:
+          type: string
+        Options:
+          $ref: '#/components/schemas/Options'
+        Schedule:
+          $ref: '#/components/schemas/TaskSchedule'
+        Tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagListEntry'
   securitySchemes:
     sigv4:
       type: apiKey

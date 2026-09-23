@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: 'Amazon DataSync REST Amazon DataSync REST API #DescribeTask #Describe Task #Describe Task API'
+  title: 'Amazon DataSync REST #Describe Task API'
   description: AWS DataSync is an online data transfer service that simplifies, automates, and accelerates moving data between on-premises storage systems and AWS storage services. This API enables management of transfer tasks, source and destination locations, agents, and task executions.
   version: '2018-11-09'
   contact:
@@ -60,13 +60,6 @@ paths:
       - '#DescribeTask'
 components:
   schemas:
-    DescribeTaskRequest:
-      type: object
-      required:
-      - TaskArn
-      properties:
-        TaskArn:
-          type: string
     Options:
       type: object
       properties:
@@ -122,6 +115,13 @@ components:
           type: string
         Options:
           $ref: '#/components/schemas/Options'
+    DescribeTaskRequest:
+      type: object
+      required:
+      - TaskArn
+      properties:
+        TaskArn:
+          type: string
   securitySchemes:
     sigv4:
       type: apiKey
