@@ -4,15 +4,10 @@
     "_original/amazon-datasync-api-openapi.yml"
   ],
   "outputs": [
-    "amazon-datasync-createagent-api-openapi.yml",
-    "amazon-datasync-createlocations3-api-openapi.yml",
-    "amazon-datasync-describetask-api-openapi.yml",
-    "amazon-datasync-listtasks-api-openapi.yml",
-    "amazon-datasync-starttaskexecution-api-openapi.yml",
     "amazon-datasync-amazon-datasync-rest-api-api-openapi.yml"
   ],
   "archived": [
-    "deleted 1 superseded output(s) from the previous generation"
+    "deleted 5 superseded output(s) from the previous generation"
   ],
   "errors": [],
   "warnings": [],
@@ -20,9 +15,14 @@
     "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "amazon-datasync-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "amazon-datasync-api-openapi.yml: tagged paths POST / -> Amazon DataSync REST API",
+    "amazon-datasync-api-openapi.yml: tagged paths POST /#ListTasks -> Amazon DataSync REST API",
+    "amazon-datasync-api-openapi.yml: tagged paths POST /#DescribeTask -> Amazon DataSync REST API",
+    "amazon-datasync-api-openapi.yml: tagged paths POST /#StartTaskExecution -> Amazon DataSync REST API",
+    "amazon-datasync-api-openapi.yml: tagged paths POST /#CreateLocationS3 -> Amazon DataSync REST API",
+    "amazon-datasync-api-openapi.yml: tagged paths POST /#CreateAgent -> Amazon DataSync REST API",
     "amazon-datasync-api-openapi.yml: declared missing tag: Amazon DataSync REST API",
-    "superseded outputs removed: amazon-datasync-create-agent-api-openapi.yml",
-    "apis.yml register: written (+1 apis, 6 total)"
+    "superseded outputs removed: amazon-datasync-create-agent-api-openapi.yml, amazon-datasync-createlocations3-api-openapi.yml, amazon-datasync-describetask-api-openapi.yml, amazon-datasync-listtasks-api-openapi.yml, amazon-datasync-starttaskexecution-api-openapi.yml",
+    "apis.yml register: written (+0 apis, 1 total)"
   ],
   "skipped": [
     "amazon-datasync-amazon-datasync-rest-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",

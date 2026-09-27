@@ -58,8 +58,120 @@ paths:
       x-amz-target: FmrsService.CreateTask
       tags:
       - Amazon DataSync REST API
+  /#ListTasks:
+    post:
+      summary: Amazon DataSync List Tasks
+      description: Returns a list of the DataSync tasks you created.
+      operationId: listTasks
+      requestBody:
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              $ref: '#/components/schemas/ListTasksRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListTasksResponse'
+      x-amz-target: FmrsService.ListTasks
+      tags:
+      - Amazon DataSync REST API
+  /#DescribeTask:
+    post:
+      summary: Amazon DataSync Describe Task
+      description: Provides information about a DataSync transfer task.
+      operationId: describeTask
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              $ref: '#/components/schemas/DescribeTaskRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeTaskResponse'
+      x-amz-target: FmrsService.DescribeTask
+      tags:
+      - Amazon DataSync REST API
+  /#StartTaskExecution:
+    post:
+      summary: Amazon DataSync Start Task Execution
+      description: Starts an existing DataSync task. By starting a task, you tell DataSync to immediately begin transferring data.
+      operationId: startTaskExecution
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              $ref: '#/components/schemas/StartTaskExecutionRequest'
+      responses:
+        '200':
+          description: Successful response
+      x-amz-target: FmrsService.StartTaskExecution
+      tags:
+      - Amazon DataSync REST API
+  /#CreateLocationS3:
+    post:
+      summary: Amazon DataSync Create Location S3
+      description: Creates a transfer location for an Amazon S3 bucket.
+      operationId: createLocationS3
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              $ref: '#/components/schemas/CreateLocationS3Request'
+      responses:
+        '200':
+          description: Successful response
+      x-amz-target: FmrsService.CreateLocationS3
+      tags:
+      - Amazon DataSync REST API
+  /#CreateAgent:
+    post:
+      summary: Amazon DataSync Create Agent
+      description: Activates an AWS DataSync agent that you've deployed in your storage environment.
+      operationId: createAgent
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              $ref: '#/components/schemas/CreateAgentRequest'
+      responses:
+        '200':
+          description: Successful response
+      x-amz-target: FmrsService.CreateAgent
+      tags:
+      - Amazon DataSync REST API
 components:
   schemas:
+    CreateAgentRequest:
+      type: object
+      required:
+      - ActivationKey
+      properties:
+        ActivationKey:
+          type: string
+        AgentName:
+          type: string
+        Tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagListEntry'
+    StartTaskExecutionRequest:
+      type: object
+      required:
+      - TaskArn
+      properties:
+        TaskArn:
+          type: string
     Options:
       type: object
       properties:
@@ -100,6 +212,22 @@ components:
           - false
           - BASIC
           - TRANSFER
+    ListTasksResponse:
+      type: object
+      properties:
+        Tasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaskListEntry'
+        NextToken:
+          type: string
+    DescribeTaskRequest:
+      type: object
+      required:
+      - TaskArn
+      properties:
+        TaskArn:
+          type: string
     TaskSchedule:
       type: object
       required:
@@ -121,6 +249,52 @@ components:
           type: string
         Value:
           type: string
+    TaskListEntry:
+      type: object
+      properties:
+        TaskArn:
+          type: string
+        Status:
+          type: string
+        Name:
+          type: string
+    CreateLocationS3Request:
+      type: object
+      required:
+      - S3BucketArn
+      - S3Config
+      properties:
+        S3BucketArn:
+          type: string
+        S3Config:
+          type: object
+          properties:
+            BucketAccessRoleArn:
+              type: string
+        Subdirectory:
+          type: string
+    ListTasksRequest:
+      type: object
+      properties:
+        MaxResults:
+          type: integer
+        NextToken:
+          type: string
+    DescribeTaskResponse:
+      type: object
+      properties:
+        TaskArn:
+          type: string
+        Status:
+          type: string
+        Name:
+          type: string
+        SourceLocationArn:
+          type: string
+        DestinationLocationArn:
+          type: string
+        Options:
+          $ref: '#/components/schemas/Options'
     CreateTaskRequest:
       type: object
       required:
