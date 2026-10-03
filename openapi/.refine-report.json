@@ -6,9 +6,7 @@
   "outputs": [
     "amazon-datasync-amazon-datasync-rest-api-api-openapi.yml"
   ],
-  "archived": [
-    "deleted 5 superseded output(s) from the previous generation"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -21,15 +19,9 @@
     "amazon-datasync-api-openapi.yml: tagged paths POST /#CreateLocationS3 -> Amazon DataSync REST API",
     "amazon-datasync-api-openapi.yml: tagged paths POST /#CreateAgent -> Amazon DataSync REST API",
     "amazon-datasync-api-openapi.yml: declared missing tag: Amazon DataSync REST API",
-    "superseded outputs removed: amazon-datasync-create-agent-api-openapi.yml, amazon-datasync-createlocations3-api-openapi.yml, amazon-datasync-describetask-api-openapi.yml, amazon-datasync-listtasks-api-openapi.yml, amazon-datasync-starttaskexecution-api-openapi.yml",
-    "apis.yml register: written (+0 apis, 1 total)"
+    "apis.yml register: already-registered"
   ],
   "skipped": [
-    "amazon-datasync-amazon-datasync-rest-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-datasync-create-agent-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-datasync-createlocations3-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-datasync-describetask-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-datasync-listtasks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-datasync-starttaskexecution-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+    "amazon-datasync-amazon-datasync-rest-api-api-openapi.yml: previously refined output, superseded by openapi/_original/"
   ]
 }

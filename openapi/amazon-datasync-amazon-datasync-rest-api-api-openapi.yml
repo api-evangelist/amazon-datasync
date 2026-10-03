@@ -152,6 +152,50 @@ paths:
       - Amazon DataSync REST API
 components:
   schemas:
+    CreateTaskRequest:
+      type: object
+      required:
+      - SourceLocationArn
+      - DestinationLocationArn
+      properties:
+        SourceLocationArn:
+          type: string
+        DestinationLocationArn:
+          type: string
+        Name:
+          type: string
+        Options:
+          $ref: '#/components/schemas/Options'
+        Schedule:
+          $ref: '#/components/schemas/TaskSchedule'
+        Tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagListEntry'
+    DescribeTaskResponse:
+      type: object
+      properties:
+        TaskArn:
+          type: string
+        Status:
+          type: string
+        Name:
+          type: string
+        SourceLocationArn:
+          type: string
+        DestinationLocationArn:
+          type: string
+        Options:
+          $ref: '#/components/schemas/Options'
+    TaskListEntry:
+      type: object
+      properties:
+        TaskArn:
+          type: string
+        Status:
+          type: string
+        Name:
+          type: string
     CreateAgentRequest:
       type: object
       required:
@@ -165,12 +209,50 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TagListEntry'
-    StartTaskExecutionRequest:
+    ListTasksRequest:
+      type: object
+      properties:
+        MaxResults:
+          type: integer
+        NextToken:
+          type: string
+    TaskSchedule:
+      type: object
+      required:
+      - ScheduleExpression
+      properties:
+        ScheduleExpression:
+          type: string
+    DescribeTaskRequest:
       type: object
       required:
       - TaskArn
       properties:
         TaskArn:
+          type: string
+    TagListEntry:
+      type: object
+      required:
+      - Key
+      properties:
+        Key:
+          type: string
+        Value:
+          type: string
+    CreateLocationS3Request:
+      type: object
+      required:
+      - S3BucketArn
+      - S3Config
+      properties:
+        S3BucketArn:
+          type: string
+        S3Config:
+          type: object
+          properties:
+            BucketAccessRoleArn:
+              type: string
+        Subdirectory:
           type: string
     Options:
       type: object
@@ -209,9 +291,21 @@ components:
         LogLevel:
           type: string
           enum:
-          - false
+          - 'OFF'
           - BASIC
           - TRANSFER
+    CreateTaskResponse:
+      type: object
+      properties:
+        TaskArn:
+          type: string
+    StartTaskExecutionRequest:
+      type: object
+      required:
+      - TaskArn
+      properties:
+        TaskArn:
+          type: string
     ListTasksResponse:
       type: object
       properties:
@@ -221,100 +315,6 @@ components:
             $ref: '#/components/schemas/TaskListEntry'
         NextToken:
           type: string
-    DescribeTaskRequest:
-      type: object
-      required:
-      - TaskArn
-      properties:
-        TaskArn:
-          type: string
-    TaskSchedule:
-      type: object
-      required:
-      - ScheduleExpression
-      properties:
-        ScheduleExpression:
-          type: string
-    CreateTaskResponse:
-      type: object
-      properties:
-        TaskArn:
-          type: string
-    TagListEntry:
-      type: object
-      required:
-      - Key
-      properties:
-        Key:
-          type: string
-        Value:
-          type: string
-    TaskListEntry:
-      type: object
-      properties:
-        TaskArn:
-          type: string
-        Status:
-          type: string
-        Name:
-          type: string
-    CreateLocationS3Request:
-      type: object
-      required:
-      - S3BucketArn
-      - S3Config
-      properties:
-        S3BucketArn:
-          type: string
-        S3Config:
-          type: object
-          properties:
-            BucketAccessRoleArn:
-              type: string
-        Subdirectory:
-          type: string
-    ListTasksRequest:
-      type: object
-      properties:
-        MaxResults:
-          type: integer
-        NextToken:
-          type: string
-    DescribeTaskResponse:
-      type: object
-      properties:
-        TaskArn:
-          type: string
-        Status:
-          type: string
-        Name:
-          type: string
-        SourceLocationArn:
-          type: string
-        DestinationLocationArn:
-          type: string
-        Options:
-          $ref: '#/components/schemas/Options'
-    CreateTaskRequest:
-      type: object
-      required:
-      - SourceLocationArn
-      - DestinationLocationArn
-      properties:
-        SourceLocationArn:
-          type: string
-        DestinationLocationArn:
-          type: string
-        Name:
-          type: string
-        Options:
-          $ref: '#/components/schemas/Options'
-        Schedule:
-          $ref: '#/components/schemas/TaskSchedule'
-        Tags:
-          type: array
-          items:
-            $ref: '#/components/schemas/TagListEntry'
   securitySchemes:
     sigv4:
       type: apiKey
