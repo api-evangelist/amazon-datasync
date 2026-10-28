@@ -1,4 +1,4 @@
-# Amazon DataSync (amazon-datasync)
+# Amazon DataSync
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,86 +66,213 @@
 
 AWS DataSync is an online data transfer service that simplifies, automates, and accelerates moving data between on-premises storage systems, AWS storage services, and other cloud storage. DataSync can transfer data at speeds up to 10 times faster than open-source tools by using purpose-built network protocol and parallel multi-threaded architecture. It supports NFS, SMB, HDFS, S3, EFS, FSx, and more as transfer endpoints.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/amazon-datasync/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/amazon-datasync/refs/heads/main/apis.yml)
+**Areas:** AWS · Data Transfer · Migration · Storage · Automation · Hybrid Cloud
 
-## Scope
+## Amazon DataSync on APIs.io
 
-- **Type:** Index
+Everything profiled for Amazon DataSync is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-datasync/](https://apis.io/providers/amazon-datasync/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (14)
 
-- AWS
-- Data Transfer
-- Migration
-- Storage
-- Automation
-- Hybrid Cloud
+- [Amazon DataSync Amazon DataSync REST API](https://apis.io/apis/amazon-datasync/amazon-datasync-amazon-datasync-rest-api-api/) — The Amazon DataSync REST API API from Amazon DataSync — 1 operation(s) for amazon datasync rest api.
+- [Amazon DataSync Datasync Agent API](https://apis.io/apis/amazon-datasync/amazon-datasync-agent-api/) — The Datasync Agent API from Amazon DataSync — 4 operation(s) for datasync agent.
+- [Amazon DataSync Datasync Location Azure Blob API](https://apis.io/apis/amazon-datasync/amazon-datasync-location-azure-blob-api/) — The Datasync Location Azure Blob API from Amazon DataSync — 3 operation(s) for datasync location azure blob.
+- [Amazon DataSync Datasync Location Ef API](https://apis.io/apis/amazon-datasync/amazon-datasync-location-ef-api/) — The Datasync Location Ef API from Amazon DataSync — 3 operation(s) for datasync location ef.
+- [Amazon DataSync Datasync Location Fsx Lustre API](https://apis.io/apis/amazon-datasync/amazon-datasync-location-fsx-lustre-api/) — The Datasync Location Fsx Lustre API from Amazon DataSync — 3 operation(s) for datasync location fsx lustre.
+- [Amazon DataSync Datasync Location Fsx Ontap API](https://apis.io/apis/amazon-datasync/amazon-datasync-location-fsx-ontap-api/) — The Datasync Location Fsx Ontap API from Amazon DataSync — 3 operation(s) for datasync location fsx ontap.
+- [Amazon DataSync Datasync Location Fsx Open Zf API](https://apis.io/apis/amazon-datasync/amazon-datasync-location-fsx-open-zf-api/) — The Datasync Location Fsx Open Zf API from Amazon DataSync — 3 operation(s) for datasync location fsx open zf.
+- [Amazon DataSync Datasync Location Fsx Window API](https://apis.io/apis/amazon-datasync/amazon-datasync-location-fsx-window-api/) — The Datasync Location Fsx Window API from Amazon DataSync — 3 operation(s) for datasync location fsx window.
+- [Amazon DataSync Datasync Location Hdf API](https://apis.io/apis/amazon-datasync/amazon-datasync-location-hdf-api/) — The Datasync Location Hdf API from Amazon DataSync — 3 operation(s) for datasync location hdf.
+- [Amazon DataSync Datasync Location Nf API](https://apis.io/apis/amazon-datasync/amazon-datasync-location-nf-api/) — The Datasync Location Nf API from Amazon DataSync — 3 operation(s) for datasync location nf.
+- [Amazon DataSync Datasync Location Object Storage API](https://apis.io/apis/amazon-datasync/amazon-datasync-location-object-storage-api/) — The Datasync Location Object Storage API from Amazon DataSync — 3 operation(s) for datasync location object storage.
+- [Amazon DataSync Datasync Location Smb API](https://apis.io/apis/amazon-datasync/amazon-datasync-location-smb-api/) — The Datasync Location Smb API from Amazon DataSync — 3 operation(s) for datasync location smb.
+- [Amazon DataSync Datasync Operations API](https://apis.io/apis/amazon-datasync/amazon-datasync-operations-api/) — The Datasync Operations API from Amazon DataSync — 9 operation(s) for datasync operations.
+- [Amazon DataSync Datasync Task Execution API](https://apis.io/apis/amazon-datasync/amazon-datasync-task-execution-api/) — The Datasync Task Execution API from Amazon DataSync — 4 operation(s) for datasync task execution.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-01-15
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Amazon DataSync REST API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-RESTful API for AWS DataSync enabling management of data transfer tasks, locations, agents, and task executions for automated data movement between on-premises storage systems and AWS cloud storage. Supports NFS, SMB, S3, EFS, FSx, and HDFS as transfer endpoints.
+- [Amazon Datasync Agentic Access](https://apis.io/agentic-access/amazon-datasync/amazon-datasync-agentic-access/)
 
-- **Human URL:** [https://aws.amazon.com/datasync/](https://aws.amazon.com/datasync/)
-- **Base URL:** `https://datasync.amazonaws.com`
+#### JSON Schema (11)
 
-#### Tags
+The data models the API reads and writes.
 
-- Data Transfer
-- Migration
-- Storage
-- Automation
+- [Agent](https://apis.io/schemas/amazon-datasync/agent/)
+- [Amazon DataSync Task](https://apis.io/schemas/amazon-datasync/amazon-datasync-task/)
+- [Create Location S3 Request](https://apis.io/schemas/amazon-datasync/create-location-s3-request/)
+- [Create Task Request](https://apis.io/schemas/amazon-datasync/create-task-request/)
+- [Create Task Response](https://apis.io/schemas/amazon-datasync/create-task-response/)
+- [Error](https://apis.io/schemas/amazon-datasync/error/)
+- [Location](https://apis.io/schemas/amazon-datasync/location/)
+- [Options](https://apis.io/schemas/amazon-datasync/options/)
+- [Task](https://apis.io/schemas/amazon-datasync/task/)
+- [Task Execution](https://apis.io/schemas/amazon-datasync/task-execution/)
+- [Task List Entry](https://apis.io/schemas/amazon-datasync/task-list-entry/)
 
-#### Properties
+#### JSON Structure (10)
 
-- [Documentation](https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html)
-- [OpenAPI](openapi/amazon-datasync-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/amazon-datasync-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/amazon-datasync-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [OpenAPI](https://api.apis.guru/v2/specs/amazonaws.com/datasync/2018-11-09/openapi.yaml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Getting Started](https://aws.amazon.com/datasync/getting-started/)
-- [Pricing](https://aws.amazon.com/datasync/pricing/)
-- [F A Q](https://aws.amazon.com/datasync/faqs/)
-- [API Reference](https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html)
-- [Authentication](https://docs.aws.amazon.com/datasync/latest/userguide/security.html)
-- [JSON Schema](json-schema/task-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/location-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/agent-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/task-execution-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](json-ld/amazon-datasync-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+Data models expressed in JSON Structure.
 
-## Common Properties
+- [Agent Structure](https://apis.io/json-structure/amazon-datasync/agent-structure/)
+- [Create Location S3 Request Structure](https://apis.io/json-structure/amazon-datasync/create-location-s3-request-structure/)
+- [Create Task Request Structure](https://apis.io/json-structure/amazon-datasync/create-task-request-structure/)
+- [Create Task Response Structure](https://apis.io/json-structure/amazon-datasync/create-task-response-structure/)
+- [Error Structure](https://apis.io/json-structure/amazon-datasync/error-structure/)
+- [Location Structure](https://apis.io/json-structure/amazon-datasync/location-structure/)
+- [Options Structure](https://apis.io/json-structure/amazon-datasync/options-structure/)
+- [Task Execution Structure](https://apis.io/json-structure/amazon-datasync/task-execution-structure/)
+- [Task List Entry Structure](https://apis.io/json-structure/amazon-datasync/task-list-entry-structure/)
+- [Task Structure](https://apis.io/json-structure/amazon-datasync/task-structure/)
 
-- [Portal](https://aws.amazon.com/datasync/)
-- [Developer Portal](https://aws.amazon.com/datasync/)
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Datasync Context](https://apis.io/jsonld/amazon-datasync/amazon-datasync-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon DataSync Vocabulary](https://apis.io/vocabularies/amazon-datasync/amazon-datasync-vocabulary/)
+
+#### Examples (10)
+
+Example requests and responses.
+
+- [Agent Example](https://apis.io/examples/amazon-datasync/agent-example/)
+- [Create Location S3 Request Example](https://apis.io/examples/amazon-datasync/create-location-s3-request-example/)
+- [Create Task Request Example](https://apis.io/examples/amazon-datasync/create-task-request-example/)
+- [Create Task Response Example](https://apis.io/examples/amazon-datasync/create-task-response-example/)
+- [Error Example](https://apis.io/examples/amazon-datasync/error-example/)
+- [Location Example](https://apis.io/examples/amazon-datasync/location-example/)
+- [Options Example](https://apis.io/examples/amazon-datasync/options-example/)
+- [Task Example](https://apis.io/examples/amazon-datasync/task-example/)
+- [Task Execution Example](https://apis.io/examples/amazon-datasync/task-execution-example/)
+- [Task List Entry Example](https://apis.io/examples/amazon-datasync/task-list-entry-example/)
+
+#### Collections (13)
+
+Postman and Open Collection request collections.
+
+- [Amazon DataSync REST Amazon DataSync REST API API](https://apis.io/collections/amazon-datasync/open-amazon-datasync-amazon-datasync-rest-api-api/)
+- [Amazon DataSync REST API](https://apis.io/collections/amazon-datasync/open-amazon-datasync-api/)
+- [Amazon DataSync REST Amazon DataSync REST API #CreateAgent API](https://apis.io/collections/amazon-datasync/open-amazon-datasync-createagent-api/)
+- [Amazon DataSync REST Amazon DataSync REST API #CreateLocationS3 API](https://apis.io/collections/amazon-datasync/open-amazon-datasync-createlocations3-api/)
+- [Amazon DataSync REST Amazon DataSync REST API #DescribeTask API](https://apis.io/collections/amazon-datasync/open-amazon-datasync-describetask-api/)
+- [Amazon DataSync REST Amazon DataSync REST API #ListTasks API](https://apis.io/collections/amazon-datasync/open-amazon-datasync-listtasks-api/)
+- [Amazon DataSync REST Amazon DataSync REST API #StartTaskExecution API](https://apis.io/collections/amazon-datasync/open-amazon-datasync-starttaskexecution-api/)
+- [Amazon DataSync REST Amazon DataSync REST API API](https://apis.io/collections/amazon-datasync/postman-amazon-datasync-amazon-datasync-rest-api-api/)
+- [Amazon DataSync REST Amazon DataSync REST API #CreateAgent API](https://apis.io/collections/amazon-datasync/postman-amazon-datasync-createagent-api/)
+- [Amazon DataSync REST Amazon DataSync REST API #CreateLocationS3 API](https://apis.io/collections/amazon-datasync/postman-amazon-datasync-createlocations3-api/)
+- [Amazon DataSync REST Amazon DataSync REST API #DescribeTask API](https://apis.io/collections/amazon-datasync/postman-amazon-datasync-describetask-api/)
+- [Amazon DataSync REST Amazon DataSync REST API #ListTasks API](https://apis.io/collections/amazon-datasync/postman-amazon-datasync-listtasks-api/)
+- [Amazon DataSync REST Amazon DataSync REST API #StartTaskExecution API](https://apis.io/collections/amazon-datasync/postman-amazon-datasync-starttaskexecution-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon DataSync — jsonschema rules](https://apis.io/rules/amazon-datasync/amazon-datasync-jsonschema-spectral-rules/)
+- [Amazon DataSync API Rules](https://apis.io/rules/amazon-datasync/amazon-datasync-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Datasync Authentication](https://apis.io/security/amazon-datasync/amazon-datasync-authentication/)
+- [Amazon Datasync Domain Security](https://apis.io/security/amazon-datasync/amazon-datasync-domain-security/)
+- [Amazon Datasync Trust Center](https://apis.io/security/amazon-datasync/amazon-datasync-trust-center/)
+- [Amazon Datasync Vulnerability Disclosure](https://apis.io/security/amazon-datasync/amazon-datasync-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Datasync Plans Pricing](https://apis.io/plans/amazon-datasync/amazon-datasync-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Datasync Rate Limits](https://apis.io/rate-limits/amazon-datasync/amazon-datasync-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Datasync Finops](https://apis.io/finops/amazon-datasync/amazon-datasync-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://aws.amazon.com/datasync/)
 - [Documentation](https://docs.aws.amazon.com/datasync/)
-- [Terms of Service](https://aws.amazon.com/service-terms/)
-- [Privacy Policy](https://aws.amazon.com/privacy/)
 - [Support](https://aws.amazon.com/premiumsupport/)
 - [Blog](https://aws.amazon.com/blogs/storage/)
-- [GitHub Organization](https://github.com/aws)
-- [Console](https://console.aws.amazon.com/datasync/)
-- [Sign Up](https://portal.aws.amazon.com/billing/signup)
-- [Login](https://signin.aws.amazon.com/)
-- [Status Page](https://health.aws.amazon.com/health/status)
-- [Contact](https://aws.amazon.com/contact-us/)
-- [YouTube](https://www.youtube.com/user/AmazonWebServices)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/aws-datasync)
-- [Spectral Rules](rules/amazon-datasync-spectral-rules.yml)
-- [Vocabulary](vocabulary/amazon-datasync-vocabulary.yaml)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
-- [Integrations](https://aws.amazon.com/marketplace)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
-**URL:** https://apievangelist.com
+**Kin Score 55.9** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 60.3 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 65.5 |
+| Access clarity | 53.9 |
+
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-datasync/](https://apis.io/providers/amazon-datasync/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon DataSync: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-datasync/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
