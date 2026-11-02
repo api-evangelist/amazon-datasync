@@ -42,7 +42,7 @@ plans:
 rate_limit_statements:
 - Basic mode is subject to quotas on the number of files and objects in a dataset.
 x-canonical:
-  generated: '2026-11-01'
+  generated: '2026-11-02'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - subscription
