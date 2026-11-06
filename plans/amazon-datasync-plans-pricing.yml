@@ -42,18 +42,20 @@ plans:
 rate_limit_statements:
 - Basic mode is subject to quotas on the number of files and objects in a dataset.
 x-canonical:
-  generated: '2026-11-02'
+  generated: '2026-11-06'
   vocabulary: engine/economics/plans-canonical.yml
   models:
+  - hybrid
   - subscription
-  units: []
+  units:
+  - data
   plans:
   - name: Enhanced mode data transfer
     access: other
-    model: subscription
+    model: hybrid
     model_how: derived
     units:
-    - other
+    - data
     periods:
     - other
   - name: Enhanced mode task execution
@@ -66,9 +68,9 @@ x-canonical:
     - other
   - name: Basic mode data transfer
     access: other
-    model: subscription
+    model: hybrid
     model_how: derived
     units:
-    - other
+    - data
     periods:
     - other
